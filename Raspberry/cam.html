@@ -1,0 +1,35 @@
+<!--
+-
+-   Advanced Software Engineering
+-
+-   Members :     Byungwook Lee, Hyesun Lim, Sunghoon Byun
+-
+-   File name :   cam.html
+-   Description : This program perform browsing the web page for showing video from raspberry pi camera.
+-
+-   Execution command : Open web browser, and input a URL http://192.168.0.185:8000/cam
+-
+-   Final Revision : 2015.11.27
+-
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CAM</title>
+  </head>
+  <body>
+    <h1>CAM page</h1>
+    <script type = 'text/javascript'>
+      var image = document.createElement('img') ;
+      image.src = '/img'+'?time='+new Date().getTime() ;
+      setInterval(function () {
+          changeImage() ;
+        }, 600) ;
+      function changeImage() {
+          image.src = '/img'+'?time='+new Date().getTime() ;
+          document.body.appendChild(image) ;
+        }
+    </script>
+  </body>
+</html>
